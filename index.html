@@ -4,22 +4,43 @@
     <link rel="icon" type="image/x-icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRceyVc4_hM5CnX56URCLtiX23pLJ1O3emdHZcVFp4&s">
 </head>
 
-<body style="background-color:rgb(27, 26, 23)">
+<body style="background-color:rgb(27, 26, 23);text-align: center;font-family: sans-serif;color:white ;" >
+    
 
     <aside>
-        <form>
-            <p style="color:white">Haz tu cuenta hoy!</p><br>
-            <label for="user" style="color:white">Usuario</label><br>
-            <input type="text" id="user" name="user"><br>
-            <label for="pass" style="color:white">Contraseña</label><br>
-            <input type="text" id="pass" name="pass"><br>
-            <input type="button" value="unir" onclick="login()">
+      <p style="text-align: left;">I esta mamada no jala no le intenten poner cosas</p><br>
+      <p style="text-align: left;">V</p><br>
+        <form style="text-align: left;">
+            <label for="username">Username:</label>
+   <input type="text" id="username" name="username"><br><br>
+   <label for="password">Password:</label>
+   <input type="password" id="password" name="password"><br><br>
+   <input type="button" value="Submit" onclick="login()">
+   <script>
+    function login() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "login.php", true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+      // Redirect the user to the dashboard page upon successful login
+      window.location.href = "dashboard.html";
+    }
+  }
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  xhr.send(JSON.stringify({username: username, password: password}));
+}
+   </script>
           </form> 
 
             
 
     </aside>
-    <h1 style="color:white">2A de Mecatronica del CBTIs 7</h1>
+    <h1 style="color:white">2A de Mecatronica del CBTis 7</h1>
+
+    <h4>Jean Saro, o Yin Sarro para los compas</h4>
+    <img src="yinyang.jpg" alt="fotoyian">
 
 
 
